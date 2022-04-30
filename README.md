@@ -70,3 +70,5 @@ public class DemoApplication {
   }
 }
 ````
+
+Restart the app and you should see content on the default homepage.
