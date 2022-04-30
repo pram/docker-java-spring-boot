@@ -37,3 +37,13 @@ Install Spring Boot
 
 ## Creating the Application
 
+Create a simple Spring web application
+
+    spring init --dependencies=web demo-application
+
+Test that the application works
+
+    cd demo-application
+    ./mvnw spring-boot:run
+
+You should be able to navigate to the [app via a browser and see the default placeholder page](http://localhost:8080/)
