@@ -75,4 +75,12 @@ Restart the app and you should see content on the default homepage.
 
 Copy the files `Dockerfile` and `docker-compose.yml` into the root level of the demo application. Then run the following command
 
-    docker compose build --no-cache demo-application 
+    docker compose build --no-cache demo-application
+
+You can start the application using the command
+
+    docker compose up -d
+
+Shut down the container with
+
+    docker compose down
