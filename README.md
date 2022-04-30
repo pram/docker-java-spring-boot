@@ -8,8 +8,8 @@ Docker Java Spring Boot Test Application
 Install WSL - [Offical Instructions](https://docs.microsoft.com/en-us/windows/wsl/install)
 ### Docker
 
-Install Docker Desktop on Windows
-Install Docker engine on Linux
+Install Docker Desktop on Windows  [Official Instructions](https://docs.docker.com/desktop/windows/install/)
+Install Docker engine on Linux  [Official Instructions](https://docs.docker.com/engine/install/)
 
 ### SDKMan
 
@@ -35,4 +35,5 @@ Install Spring Boot
 
     sdk install springboot
 
+## Creating the Application
 
