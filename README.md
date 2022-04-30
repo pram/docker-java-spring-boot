@@ -47,3 +47,26 @@ Test that the application works
     ./mvnw spring-boot:run
 
 You should be able to navigate to the [app via a browser and see the default placeholder page](http://localhost:8080/)
+
+Update the default code with an endpoint.
+
+Open the file `demo-application\src\main\java\com\example\demoapplication\DemoApplication.java` and replace the contents
+
+````
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@SpringBootApplication
+@RestController
+public class DemoApplication {
+  @RequestMapping("/")
+  public String home() {
+     return "Hello Everybody!";
+  }
+  public static void main(String[] args) {
+    SpringApplication.run(DemoApplication.class, args);
+  }
+}
+````
