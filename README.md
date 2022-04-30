@@ -5,7 +5,7 @@ Docker Java Spring Boot Test Application
 
 ### WSL
 
-Install WSL
+Install WSL - [Offical Instructions](https://docs.microsoft.com/en-us/windows/wsl/install)
 ### Docker
 
 Install Docker Desktop on Windows
@@ -22,5 +22,17 @@ Open Linux Terminal
 check that the installation is successful 
 
     sdk version
+
+### Java
+
+Install latest stable java
+
+    sdk install java
+
+### Spring Boot
+
+Install Spring Boot
+
+    sdk install springboot
 
 
