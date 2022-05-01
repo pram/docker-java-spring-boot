@@ -84,3 +84,25 @@ You can start the application using the command
 Shut down the container with
 
     docker compose down
+
+## Working with the Application
+
+You can now work with the Application in an IDE
+
+### VS Code
+
+Create a `launch.json` file in the `.vscode` folder if one doesn't exist already.
+
+Add the following snippet
+
+```
+{
+    "type": "java",
+    "name": "Attach to Remote Program",
+    "request": "attach",
+    "hostName": "localhost",
+    "port": 8000
+}
+```
+
+You can now select the option called "Attach to Remote Program" in the debug dropdown and attach to the instance running within the container. You will also be able to click the “Hot Module Swap” button (the lightning bolt icon) and VS Code will update the running application. [Refresh the link to view the results](http://localhost:8080/)
