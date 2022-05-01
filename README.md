@@ -106,3 +106,11 @@ Add the following snippet
 ```
 
 You can now select the option called "Attach to Remote Program" in the debug dropdown and attach to the instance running within the container. You will also be able to click the “Hot Module Swap” button (the lightning bolt icon) and VS Code will update the running application. [Refresh the link to view the results](http://localhost:8080/)
+
+### Intellij
+
+Double click on the file `docker-compose.yml` and click on the double pointer next to the word `services`. This will run `docker compose up`.
+
+Now create a Remote Debug configuration and set the port to 8000. It should show that the remote session is connected.
+
+You can now apply breakpoints and dynamically modify code using the Build -> Recomppile... menu item or pressing CTRL-SHIFT-F9
