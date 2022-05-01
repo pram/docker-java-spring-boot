@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoApplication {
   @RequestMapping("/")
   public String home() {
-     return "Hello Everybody! Again + Again + Again";
+     return "Hello Everybody! Again + Again + Again - Things";
   }
   public static void main(String[] args) {
     SpringApplication.run(DemoApplication.class, args);
