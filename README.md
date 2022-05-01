@@ -114,3 +114,44 @@ Double click on the file `docker-compose.yml` and click on the double pointer ne
 Now create a Remote Debug configuration and set the port to 8000. It should show that the remote session is connected.
 
 You can now apply breakpoints and dynamically modify code using the Build -> Recomppile... menu item or pressing CTRL-SHIFT-F9
+
+## Kubernetes
+
+Install Kubernetes or activate in the Docker Desktop settings within Windows
+
+Activate Kubernetes Desktop. From the command line run the following command. Get the latest version by checking the [Web UI Dashboard Page](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/). As of the time of writing the command is
+
+    kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.5.0/aio/deploy/recommended.yaml
+
+You should now see multiple apps in the "Container / Apps" section of the Docker desktop application.
+
+Now patch the deployment to disable the login screen (Don't do this is prod)
+
+    kubectl edit deployment kubernetes-dashboard -n kubernetes-dashboard
+
+Text editor will open. Look for the section `/spec/template/spec/containers/0/args/`. Approx line 41 in v2.5.0. Add the following line
+
+    - --enable-skip-login
+
+The entire section should now look like the following
+
+```
+spec:
+    containers:
+    - args:
+    - --auto-generate-certificates
+    - --namespace=kubernetes-dashboard
+    - --enable-skip-login
+```
+
+Exit the text editor and the updated setting should be applied.
+
+Now run the command to login to the dashboard
+
+    kubectl proxy
+
+You should see the following message
+
+    Starting to serve on 127.0.0.1:8001
+
+You can now [login to the dashboard](http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/)
