@@ -155,3 +155,31 @@ You should see the following message
     Starting to serve on 127.0.0.1:8001
 
 You can now [login to the dashboard](http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/)
+
+Stop that running and install the Metrics Server.
+
+Run the following command
+
+    kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+
+You will again need to edit the deployment to allow for insecure connections (again don't do this on prod)
+
+    kubectl edit deployment metrics-server -n kube-system
+
+Add the following at approx line 45
+
+    - --kubelet-insecure-tls
+
+The Section should now look like
+
+```
+ spec:
+      containers:
+      - args:
+        - --cert-dir=/tmp
+        - --secure-port=4443
+        - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
+        - --kubelet-use-node-status-port
+        - --metric-resolution=15s
+        - --kubelet-insecure-tls
+```
