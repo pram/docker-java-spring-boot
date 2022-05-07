@@ -226,3 +226,26 @@ You should be able to [navigate to the landing page](http://localhost:8080/)
 ### Kubernetes Manifest
 
 Create a Manifest file for the Kubernetes deployment called [k8-demo-application.yml](k8-demo-application.yml)
+
+### Creating a POD
+
+Create a pod by running the command
+
+    kubectl create -f k8-demo-application.yml
+
+You should see the following output
+
+```
+C:\Users\pram\working\github\docker-java-spring-boot>kubectl create -f k8-demo-application.yml
+pod/demo-application-pod created
+```
+
+Confirm that the pod has been created by running `kubectl get pods`
+
+```
+C:\Users\pram\working\github\docker-java-spring-boot>kubectl get pods
+NAME                   READY   STATUS    RESTARTS   AGE
+demo-application-pod   1/1     Running   0          45s
+```
+
+You can get further information by running `kubectl get pods/demo-application-pod` and `kubectl describe pods/demo-application-pod`
