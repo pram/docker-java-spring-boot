@@ -183,3 +183,36 @@ The Section should now look like
         - --metric-resolution=15s
         - --kubelet-insecure-tls
 ```
+
+### Building the Docker Image for Kubernetes
+
+In order to use Docker with Kubernetes we will need to build a simple docker image (ie not using Docker Compose as above)
+
+Navigate to the demo-application directory and run the following command
+
+    docker build -t pram/demo-application .
+
+Running `docker images` should show the following
+
+```
+C:\Users\pram\working\github\docker-java-spring-boot\demo-application>docker images
+REPOSITORY            TAG    IMAGE ID       CREATED          SIZE
+pram/demo-application latest c48df267cd8a   49 seconds ago   426MB
+```
+
+#### Upload to Docker Hub (optional)
+
+Run the following to upload to Docker Hub. First login to the hub
+
+```
+C:\Users\pram\working\github\docker-java-spring-boot\demo-application>docker login
+Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
+Username: pram
+Password:
+Login Succeeded
+```
+To Upload
+
+    docker push pram/demo-application
+ 
+ Once uploaded the image should be visible on the Docker hub.
