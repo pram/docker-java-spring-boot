@@ -216,3 +216,13 @@ To Upload
     docker push pram/demo-application
  
  Once uploaded the image should be visible on the Docker hub.
+
+ Check that you can run the container in standalone mode
+
+    docker container run -d -p 8080:8080 -it --name demo-application pram/demo-application:latest
+
+You should be able to [navigate to the landing page](http://localhost:8080/)
+
+### Kubernetes Manifest
+
+Create a Manifest file for the Kubernetes deployment called [k8-demo-application.yml](k8-demo-application.yml)

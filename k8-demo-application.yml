@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+   name: demo-application-pod
+spec:
+   containers:
+   - name: demo-application-container01
+     image: pram/demo-application:latest
+     ports:
+     - containerPort: 8080
