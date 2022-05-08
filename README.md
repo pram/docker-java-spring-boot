@@ -264,6 +264,4 @@ C:\Users\pram\working\github\docker-java-spring-boot>kubectl apply -f k8-demo-ap
 service/demo-application created
 ```
 
-Run `kubectl get pods` to get the name of the running pod, then plug that name into the following command
-
-    kubectl exec demo-application-df5477467-hbpd8 -c demo-application -- curl localhost:8080
+Once the service starts you should be able to [access the app](http://localhost:8080)
