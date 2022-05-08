@@ -255,6 +255,8 @@ You can get further information by running `kubectl get deployments/demo-applica
 
 ### Kubernetes Service Manifest
 
+Create the service manifest file. You can use the following [site](https://8gwifi.org/kube.jsp) to generate the template. Make sure that the selector in the service matches that in the deployment manifest.
+
 Run the following to create the service
 
     kubectl apply -f k8-demo-application-service.yml
