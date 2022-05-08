@@ -5,14 +5,16 @@ metadata:
 spec:
   selector:
     matchLabels:
-      octopusexport: OctopusExport
+      app: demo-application
+      env: dev
   replicas: 1
   strategy:
     type: RollingUpdate
   template:
     metadata:
       labels:
-        octopusexport: OctopusExport
+        app: demo-application
+        env: dev
     spec:
       containers:
         - name: demo-application
@@ -21,6 +23,9 @@ spec:
             - name: default-port
               containerPort: 8080
               protocol: TCP
+          env:
+            - name: "PORT"
+              value: "8080"    
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:

@@ -227,6 +227,8 @@ You should be able to [navigate to the landing page](http://localhost:8080/)
 
 Create a Deployment Manifest file for the Kubernetes deployment called [k8-demo-application-deployment.yml](k8-demo-application-deployment.yml)
 
+Use the [Following Site](https://k8syaml.com/) to generate the deployment file.
+
 ### Creating a Deployment
 
 Create a deployment by running the command
@@ -253,3 +255,15 @@ You can get further information by running `kubectl get deployments/demo-applica
 
 ### Kubernetes Service Manifest
 
+Run the following to create the service
+
+    kubectl apply -f k8-demo-application-service.yml
+
+```
+C:\Users\pram\working\github\docker-java-spring-boot>kubectl apply -f k8-demo-application-service.yml
+service/demo-application created
+```
+
+Run `kubectl get pods` to get the name of the running pod, then plug that name into the following command
+
+    kubectl exec demo-application-df5477467-hbpd8 -c demo-application -- curl localhost:8080
