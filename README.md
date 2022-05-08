@@ -223,29 +223,33 @@ To Upload
 
 You should be able to [navigate to the landing page](http://localhost:8080/)
 
-### Kubernetes Manifest
+### Kubernetes Deployment Manifest
 
-Create a Manifest file for the Kubernetes deployment called [k8-demo-application.yml](k8-demo-application.yml)
+Create a Deployment Manifest file for the Kubernetes deployment called [k8-demo-application-deployment.yml](k8-demo-application-deployment.yml)
 
-### Creating a POD
+### Creating a Deployment
 
-Create a pod by running the command
+Create a deployment by running the command
 
-    kubectl create -f k8-demo-application.yml
+    kubectl create -f k8-demo-application-deployment.yml
 
 You should see the following output
 
 ```
-C:\Users\pram\working\github\docker-java-spring-boot>kubectl create -f k8-demo-application.yml
-pod/demo-application-pod created
+C:\Users\pram\working\github\docker-java-spring-boot>kubectl create -f k8-demo-application-deployment.yml
+ddeployment.apps/demo-application created
 ```
 
-Confirm that the pod has been created by running `kubectl get pods`
+Confirm that the deployment has been created by running `kubectl get deployments`
 
 ```
-C:\Users\pram\working\github\docker-java-spring-boot>kubectl get pods
-NAME                   READY   STATUS    RESTARTS   AGE
-demo-application-pod   1/1     Running   0          45s
+C:\Users\pram\working\github\docker-java-spring-boot>kubectl get deployments
+NAME               READY   UP-TO-DATE   AVAILABLE   AGE
+demo-application   1/1     1            1           46s
 ```
 
-You can get further information by running `kubectl get pods/demo-application-pod` and `kubectl describe pods/demo-application-pod`
+You can get further information by running `kubectl get deployments/demo-application` and `kubectl describe deployments/demo-application`
+
+
+### Kubernetes Service Manifest
+
