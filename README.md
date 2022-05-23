@@ -267,3 +267,7 @@ service/demo-application created
 ```
 
 Once the service starts you should be able to [access the app](http://localhost:8080)
+
+To stop the running application you can issue the following command
+
+    kubectl scale --replicas=0 deployment/demo-application
